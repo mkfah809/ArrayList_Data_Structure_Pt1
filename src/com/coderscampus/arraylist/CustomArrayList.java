@@ -1,27 +1,29 @@
 package com.coderscampus.arraylist;
 
 public class CustomArrayList<T> implements CustomList<T> {
-	Object[] CurrentItems = new Object[3];
+	Object[] currentItems = new Object[3];
 	int arraySize = 0;
 
 	@Override
 	public boolean add(T item) {
-		if (arraySize == CurrentItems.length) {
-			System.out.println("Size of array is " + arraySize + " equal to size of items array is " + CurrentItems.length);			
-			CurrentItems = resizingOfArray();
+		if (arraySize == currentItems.length) {
+			currentItems = resizingOfMyArray();
 		}
 			arraySize++;
 			
 		return true;
 	}
 
-	private Object[] resizingOfArray() {
-		Object[] newItems = new Object[arraySize * 2];
+	private Object[] resizingOfMyArray() {
+		Object[] updatedItems = new Object[arraySize * 2];
 		for (int i = 0; i < arraySize; i++) {
-			newItems[i] = CurrentItems[i];
-			CurrentItems[i] = newItems[i];
+			updatedItems[i] = currentItems[i];
+			//currentItems[i] = updatedItems[i];
+			return updatedItems;
+			
 		}
-		return newItems;
+		System.out.println("out of loop");
+		return null;
 	}
 
 	@Override
@@ -30,9 +32,14 @@ public class CustomArrayList<T> implements CustomList<T> {
 		return arraySize;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T get(int index) {
-		// TODO Auto-generated method stub
+		if(index < arraySize) {
+			return (T) currentItems[index];
+		} else {			
+			System.out.println("The index of the object array is bigger than the arraySize");
+		}
 		return null;
 	}
 
