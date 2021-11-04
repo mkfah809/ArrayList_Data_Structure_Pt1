@@ -7,19 +7,24 @@ public class Application {
 		CustomArrayList<Integer> elements = new CustomArrayList<>();
 		populateNumbers(elements);
 		getSizeOfArray(elements);
+		System.out.println("");
+	
+		Object[] originalArray = new Object[5];   
+		Object[] largerArray = new Object[10];
+		System.arraycopy(originalArray, 0, largerArray, 0, originalArray.length);
 		}
 
 	private static void getSizeOfArray(CustomArrayList<Integer> elements) {
-		// then you should validate that all the elements you've inserted
-		//actually exist in your data structure
+		
 		for (int i=0; i<elements.getSize(); i++) {
-		    System.out.println(elements.get(i));
+		    System.out.println("element.get(i) is equal to  " + elements.get(i));
+		    System.out.println("");
 		}
 	}
 
 	private static void populateNumbers(CustomList<Integer> elements) {
 		// adding to the element list
-		for (int element=1; element < 5; element++) {
+		for (int element=0; element < 100; element++) {
 			elements.add(element);
 		}
 		
