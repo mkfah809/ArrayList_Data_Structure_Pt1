@@ -4,31 +4,24 @@ package com.coderscampus.arraylist;
 public class Application {
 
 	public static void main(String[] args) {
-		CustomArrayList<Integer> elements = new CustomArrayList<>();
-		populateNumbers(elements);
-		getSizeOfArray(elements);
-		System.out.println("");
-	
-		Object[] originalArray = new Object[5];   
-		Object[] largerArray = new Object[10];
-		System.arraycopy(originalArray, 0, largerArray, 0, originalArray.length);
+		launch();
 		}
-
-	private static void getSizeOfArray(CustomArrayList<Integer> elements) {
+	private static void launch() {
+		Application getArray = new Application();
+		CustomArrayList<Integer> elements = new CustomArrayList<>();
+		getArray.populateNumbers(elements);
+		getArray.getSizeOfArray(elements);
+	}
+	private void getSizeOfArray(CustomArrayList<Integer> elements) {
 		
 		for (int i=0; i<elements.getSize(); i++) {
-		    System.out.println("element.get(i) is equal to  " + elements.get(i));
-		    System.out.println("");
+		    System.out.println(i);
 		}
 	}
-
-	private static void populateNumbers(CustomList<Integer> elements) {
-		// adding to the element list
-		for (int element=0; element < 100; element++) {
-			elements.add(element);
+	private void populateNumbers(CustomList<Integer> elements) {
+		for (int populateListOfNumbers=0; populateListOfNumbers < 20; populateListOfNumbers++) {
+			elements.add(populateListOfNumbers);
 		}
-		
+		System.out.println("********** Array re-sized **********");
 	}
-
-
 }
