@@ -9,6 +9,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		if (sizeOfArray == currentItems.length) {
 			currentItems = resizingOfMyArray();
 		}
+		currentItems[sizeOfArray] = item;
 		sizeOfArray++;
 		return true;
 	}
@@ -22,11 +23,12 @@ public class CustomArrayList<T> implements CustomList<T> {
 		
 		return updatedItems;
 
+	
 	}
 
 	@Override
 	public int getSize() {
-		return sizeOfArray;
+		return currentItems.length;
 	}
 
 	@SuppressWarnings("unchecked")
