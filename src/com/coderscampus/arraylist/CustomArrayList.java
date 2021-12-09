@@ -6,7 +6,9 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public boolean add(T item) {
+		System.out.println("---");
 		if (sizeOfArray == currentItems.length) {
+			System.out.println("I will resize the Array - NOW!");
 			currentItems = resizingOfMyArray();
 		}
 		currentItems[sizeOfArray] = item;
@@ -20,28 +22,22 @@ public class CustomArrayList<T> implements CustomList<T> {
 		for (int i = 0; i < sizeOfArray; i++) {
 			updatedItems[i] = currentItems[i];
 		}
-		
 		return updatedItems;
-
-	
 	}
 
 	@Override
 	public int getSize() {
-		return currentItems.length;
+		return sizeOfArray;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T get(int index)  {
-		if (index < sizeOfArray) {
-			// System.out.println("index: " + index + " < arraySize: " + sizeOfArray);
-			return (T) currentItems[index];
-		} else if(index >= sizeOfArray) {
-			throw new ArrayIndexOutOfBoundsException("The index of the object array is bigger than the arraySize");
+	public T get(int index) throws IndexOutOfBoundsException {
+		if (index >= sizeOfArray) {
+			System.err.println("The array is out of beyond");
 		}
 
-		return null;
+		return (T) currentItems[index];
 	}
 
 }

@@ -17,11 +17,9 @@ public class Application {
 		}
 	}
 	private void populateNumbers(CustomList<Integer> elements) {
-		for (int populateListOfNumbers=1; populateListOfNumbers <= 101; populateListOfNumbers++) {
+		for (int populateListOfNumbers=0; populateListOfNumbers <= 10; populateListOfNumbers++) {
 			elements.add(populateListOfNumbers);
 		}
-		elements.add(1000);
-		
 		System.out.println("********** Array re-sized **********");
 	}
 }
