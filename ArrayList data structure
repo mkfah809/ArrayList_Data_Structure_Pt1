@@ -1,0 +1,11 @@
+implement all the abstract methods in the CustomList interface via the CustomArrayList class.
+
+While you’re implementing code inside of the CustomArrayList class, you should test it inside of a CustomListApplication class with a main method.
+
+When adding a new element, if the backing Object array is full, you should have the array double in size.
+
+So, when adding the 11th element, the backing Object array will grow from 10 to 20 elements in size.
+
+When adding the 21st element, it should grow from 20 to 40 elements in size, etc.
+
+The purpose of the task is to add code to the CustomArrayList class, but in order to make sure that your code works, you'll need to test it using JUnit test
